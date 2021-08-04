@@ -9,16 +9,13 @@
             <h1><a href="/">Blog Django Man</a></h1>
         </div>
 
-        <div>
-            <p>publicado: 14.07.2021, 19:00</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Iniciando no mundo da programação</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a> </h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <p>publicado: 14.07.2021, 20:00</p>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p>meus primeiros passos no html</p>
-        </div>
     </body>
 </html>
